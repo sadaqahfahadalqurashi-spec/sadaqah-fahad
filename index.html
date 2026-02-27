@@ -1,843 +1,0 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>صدقة جارية | المرحوم فهد القرشي</title>
-  <meta name="description" content="صدقة جارية عن المرحوم فهد القرشي — أذكار وتشغيل القرآن الكريم بصوت الشيخ السديس" />
-  <meta name="theme-color" content="#0b2a1a" />
-  <link rel="manifest" href="./manifest.json">
-  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
-  <style>
-    :root{
-      --bg:#06160f;
-      --bg2:#081f14;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.04);
-      --border:rgba(255,255,255,.14);
-      --text:#ecfdf5;
-      --muted:rgba(236,253,245,.72);
-      --gold:#f4d06f;
-      --green:#34d399;
-      --blue:#60a5fa;
-      --danger:#fb7185;
-      --shadow: 0 20px 55px rgba(0,0,0,.40);
-      --radius:18px;
-      --radius2:14px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1100px 700px at 80% -10%, rgba(244,208,111,.16), transparent 60%),
-        radial-gradient(900px 600px at 10% 10%, rgba(52,211,153,.14), transparent 55%),
-        radial-gradient(900px 650px at 70% 120%, rgba(96,165,250,.10), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-      line-height:1.9;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      overflow-x:hidden;
-    }
-    a{color:var(--blue); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1100px; margin:0 auto; padding:18px 16px 42px}
-    header{padding:22px 0 10px}
-    .hero{
-      position:relative;
-      border:1px solid var(--border);
-      border-radius: calc(var(--radius) + 6px);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .hero::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(700px 350px at 20% 0%, rgba(52,211,153,.22), transparent 60%),
-        radial-gradient(600px 320px at 85% 10%, rgba(244,208,111,.18), transparent 55%);
-      opacity:.75;
-      pointer-events:none;
-    }
-    .motif{
-      position:absolute; inset:0;
-      background-image:
-        radial-gradient(circle at 20% 20%, rgba(244,208,111,.10) 0 2px, transparent 3px),
-        radial-gradient(circle at 80% 30%, rgba(52,211,153,.09) 0 2px, transparent 3px),
-        radial-gradient(circle at 35% 75%, rgba(96,165,250,.08) 0 2px, transparent 3px);
-      background-size: 90px 90px;
-      opacity:.55;
-      pointer-events:none;
-      mix-blend-mode: screen;
-    }
-    .hero-inner{
-      position:relative;
-      padding:18px 16px 18px;
-      display:flex;
-      gap:16px;
-      align-items:flex-start;
-      justify-content:space-between;
-      flex-wrap:wrap;
-    }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:6px 10px;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background: rgba(0,0,0,.18);
-      color:var(--muted);
-      font-size:13px;
-      width:fit-content;
-    }
-    .b-dot{
-      width:10px;height:10px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, var(--green), rgba(52,211,153,.35));
-      box-shadow: 0 0 0 4px rgba(52,211,153,.10);
-    }
-    h1{
-      margin:10px 0 4px;
-      font-size: clamp(22px, 3.2vw, 30px);
-      letter-spacing:.2px;
-    }
-    .calligraphy{
-      font-family: "Scheherazade New", "Amiri", "Noto Naskh Arabic", serif;
-      font-size: clamp(18px, 2.7vw, 26px);
-      color: rgba(244,208,111,.95);
-      margin:0;
-    }
-    .sub{
-      margin:8px 0 0;
-      color:var(--muted);
-      font-size:14px;
-      max-width: 62ch;
-    }
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:flex-end;
-      margin-top:6px;
-    }
-    button, select, input{
-      font:inherit;
-      border-radius: 12px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.05);
-      color:var(--text);
-      padding:10px 12px;
-      outline:none;
-    }
-    button{cursor:pointer}
-    button:active{transform: translateY(1px)}
-    .primary{border-color: rgba(52,211,153,.55); background: rgba(52,211,153,.12)}
-    .secondary{border-color: rgba(96,165,250,.55); background: rgba(96,165,250,.12)}
-    .gold{border-color: rgba(244,208,111,.60); background: rgba(244,208,111,.12); color: var(--text)}
-    .danger{border-color: rgba(251,113,133,.60); background: rgba(251,113,133,.12)}
-    .ghost{background: rgba(0,0,0,.18)}
-    .grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-      margin-top:14px;
-    }
-    @media (max-width: 980px){
-      .grid{grid-template-columns:1fr}
-      .actions{justify-content:flex-start}
-    }
-    .card{
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      padding:16px;
-    }
-    .card h2{
-      margin:0 0 10px;
-      font-size:18px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .muted{color:var(--muted)}
-    .small{font-size:12px}
-    .divider{height:1px;background: var(--border); margin:12px 0}
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background: rgba(0,0,0,.18);
-      color: var(--muted);
-      font-size:12px;
-      width:fit-content;
-      max-width:100%;
-    }
-    .pill b{color: var(--text); font-weight:600}
-    .dua{
-      border:1px solid var(--border);
-      border-radius: var(--radius2);
-      background: rgba(0,0,0,.18);
-      padding:12px;
-      text-align:right;
-    }
-    .dua .k{color: rgba(244,208,111,.92); font-weight:600; font-size:13px}
-    .dhikr{
-      display:grid;
-      grid-template-columns: 1fr auto;
-      gap:10px;
-      align-items:start;
-      padding:12px;
-      border:1px solid var(--border);
-      border-radius: var(--radius2);
-      background: rgba(255,255,255,.03);
-      margin:10px 0;
-      text-align:right;
-    }
-    .dhikr .t{font-size:15px}
-    audio{width:100%; margin-top:10px}
-    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-    .controls{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-    .two{
-      display:grid; grid-template-columns: 1fr 1fr; gap:10px;
-    }
-    @media(max-width:640px){ .two{grid-template-columns:1fr} }
-    .counter{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:12px; border:1px solid var(--border); border-radius: var(--radius2);
-      background: rgba(0,0,0,.18);
-    }
-    .counter .num{
-      font-size:24px; font-weight:700; color: rgba(244,208,111,.95);
-      letter-spacing: .4px;
-    }
-    .toast{
-      position: fixed;
-      left: 16px; right: 16px;
-      bottom: 16px;
-      margin: 0 auto;
-      max-width: 560px;
-      border: 1px solid var(--border);
-      background: rgba(0,0,0,.55);
-      backdrop-filter: blur(8px);
-      color: var(--text);
-      border-radius: 14px;
-      padding: 10px 12px;
-      box-shadow: var(--shadow);
-      display:none;
-      z-index: 50;
-      font-size: 13px;
-      text-align:right;
-    }
-    .toast.show{display:block; animation: pop .22s ease-out}
-    @keyframes pop{ from{transform: translateY(10px); opacity:0} to{transform: translateY(0); opacity:1} }
-    footer{margin-top:16px; color: var(--muted); font-size:12px; text-align:center}
-    .sep{opacity:.55; margin:0 8px}
-    .kbd{
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      border-radius: 10px;
-      padding: 3px 7px;
-      font-size:12px;
-      color: var(--muted);
-    }
-    /* Autoplay overlay */
-    .autoplay{
-      position:fixed; inset:0;
-      display:none;
-      align-items:center; justify-content:center;
-      padding:16px;
-      z-index:60;
-      background: rgba(2,6,4,.72);
-      backdrop-filter: blur(10px);
-    }
-    .autoplay.show{display:flex}
-    .autoplay-card{
-      max-width: 560px;
-      width:100%;
-      border:1px solid var(--border);
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      padding: 18px 16px;
-      text-align:center;
-      position:relative;
-      overflow:hidden;
-    }
-    .autoplay-card::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(600px 280px at 20% 0%, rgba(52,211,153,.22), transparent 62%),
-        radial-gradient(540px 260px at 90% 10%, rgba(244,208,111,.18), transparent 60%);
-      opacity:.9;
-      pointer-events:none;
-    }
-    .autoplay-card > *{position:relative}
-    .autoplay-title{
-      font-size: 18px;
-      margin: 0 0 8px;
-      color: var(--text);
-      display:flex; align-items:center; justify-content:center; gap:10px;
-    }
-    .autoplay-note{color: var(--muted); font-size: 13px; margin:0 0 14px}
-    .autoplay-actions{display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
-    .crescent{
-      width:22px; height:22px; border-radius:999px;
-      box-shadow: -6px 0 0 0 rgba(244,208,111,.95);
-      background: transparent;
-      filter: drop-shadow(0 0 10px rgba(244,208,111,.25));
-    }
-    /* Accessibility */
-    .sr-only{
-      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-      overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header class="hero" aria-label="صدقة جارية">
-      <div class="motif" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <div>
-          <div class="badge"><span class="b-dot"></span>صدقة جارية</div>
-          <p class="calligraphy">﷽</p>
-          <h1>صدقة جارية عن المرحوم: <span id="name">فهد القرشي</span> 🤍</h1>
-          <p class="sub">
-            اللهم اغفر له وارحمه، وعافه واعف عنه، وأكرم نزله ووسع مدخله، واجعل قبره روضةً من رياض الجنة.
-          </p>
-          <p class="muted small" style="margin:10px 0 0">
-            ⚠️ تنبيه: على بعض أجهزة iPhone قد لا يستمر الصوت إذا أُغلقت الشاشة أو خرجت من المتصفح (سياسة iOS). داخل الصفحة يعمل بثبات بإذن الله.
-          </p>
-        </div>
-        <div class="actions">
-          <button class="gold" id="shareBtn" title="مشاركة الصفحة">🔗 مشاركة</button>
-          <button class="secondary" id="copyLinkBtn" title="نسخ رابط الصفحة">📋 نسخ الرابط</button>
-          <button class="ghost" id="fullBtn" title="عرض ملء الشاشة">⛶ ملء الشاشة</button>
-        </div>
-      </div>
-    </header>
-
-    <main class="grid">
-      <!-- القرآن -->
-      <section class="card" aria-label="القرآن الكريم">
-        <h2>📖 القرآن الكريم <span class="pill"><b>السديس</b> • تشغيل متواصل</span></h2>
-        <p class="muted small">
-          نحاول التشغيل تلقائيًا عند فتح الصفحة. إن منع المتصفح الصوت، سيظهر زر <span class="kbd">تشغيل الآن</span>.
-        </p>
-
-        <div class="controls">
-          <label class="muted" for="playlistSelect">القائمة:</label>
-          <select id="playlistSelect" aria-label="اختيار قائمة التشغيل"></select>
-          <button class="primary" id="playBtn">▶ تشغيل</button>
-          <button class="secondary" id="pauseBtn">⏸ إيقاف مؤقت</button>
-          <button class="secondary" id="nextBtn">⏭ التالي</button>
-          <button class="danger" id="stopBtn">⏹ إيقاف</button>
-        </div>
-
-        <audio id="player" controls preload="auto" playsinline></audio>
-
-        <div class="divider"></div>
-
-        <div class="row">
-          <span class="pill" id="nowPlaying">جاهز للتشغيل</span>
-          <span class="pill" id="trackCount">—</span>
-          <span class="pill" id="playTime">⏱ 00:00</span>
-          <span class="pill" id="netState">🌐 —</span>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="dua">
-          <div class="k">تحسين الاستقرار</div>
-          <div class="muted small">
-            الصفحة تعيد المحاولة تلقائيًا عند الانقطاع، وتحاول الاستئناف عند الرجوع للصفحة.
-            ويمكنها منع انطفاء الشاشة على الأجهزة الداعمة (Wake Lock) بعد أول تفاعل.
-          </div>
-        </div>
-      </section>
-
-      <!-- أذكار + تسبيح -->
-      <aside class="card" aria-label="الأذكار">
-        <h2>🕊️ أذكار ودعاء</h2>
-
-        <div class="dua">
-          <div class="k">دعاء للميت</div>
-          <div>
-            اللهم اغفر لـ <b>فهد القرشي</b> وارحمه، وعافه واعف عنه، ووسع مدخله،
-            ونقِّه من الخطايا كما يُنقّى الثوب الأبيض من الدنس، وبدله دارًا خيرًا من داره،
-            وأهلًا خيرًا من أهله، وأدخله الجنة وأعذه من عذاب القبر ومن عذاب النار.
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="row">
-          <button class="secondary" id="showMorning">🌅 الصباح</button>
-          <button class="secondary" id="showEvening">🌙 المساء</button>
-          <button class="secondary" id="showSleep">😴 النوم</button>
-          <button class="ghost" id="randomDhikr">✨ ذكر عشوائي</button>
-        </div>
-
-        <div id="adhkarArea" aria-live="polite"></div>
-
-        <div class="divider"></div>
-
-        <h2>🔢 عدّاد تسبيح</h2>
-        <div class="two">
-          <button class="primary" id="tasbihBtn">سبحان الله (+1)</button>
-          <button class="secondary" id="tahmidBtn">الحمد لله (+1)</button>
-          <button class="secondary" id="takbirBtn">الله أكبر (+1)</button>
-          <button class="gold" id="tahlilBtn">لا إله إلا الله (+1)</button>
-        </div>
-
-        <div style="height:10px"></div>
-
-        <div class="counter">
-          <div>
-            <div class="muted small">المجموع</div>
-            <div class="num" id="count">0</div>
-          </div>
-          <div class="row">
-            <button class="ghost" id="undoBtn" title="تراجع">↩︎ تراجع</button>
-            <button class="danger" id="resetBtn">تصفير</button>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="dua">
-          <div class="k">نصيحة</div>
-          <div class="muted small">
-            اجعل نيتك: ثواب القراءة والذكر هديةً للمرحوم، مع الدعاء له دائمًا 🤍
-          </div>
-        </div>
-      </aside>
-    </main>
-
-    <footer>
-      <span>تم إنشاء هذه الصفحة لوجه الله تعالى</span>
-      <span class="sep">•</span>
-      <span class="muted">يمكنك تعديل الاسم داخل الملف بسهولة</span>
-    </footer>
-  </div>
-
-  <!-- Autoplay overlay -->
-  <div id="autoplay" class="autoplay" role="dialog" aria-modal="true" aria-label="تشغيل تلقائي">
-    <div class="autoplay-card">
-      <div class="autoplay-title"><span class="crescent" aria-hidden="true"></span>تشغيل القرآن تلقائيًا</div>
-      <p class="autoplay-note">
-        بعض المتصفحات تمنع تشغيل الصوت تلقائيًا. اضغط زر <b>تشغيل الآن</b> مرة واحدة وسيستمر التشغيل تلقائيًا بعد ذلك بإذن الله.
-      </p>
-      <div class="autoplay-actions">
-        <button class="primary" id="autoplayStart">▶ تشغيل الآن</button>
-        <button class="ghost" id="autoplayClose">إغلاق</button>
-      </div>
-      <div style="height:10px"></div>
-      <div class="pill" style="margin:0 auto">نصيحة: اترك الصفحة مفتوحة لتستمر التلاوة</div>
-    </div>
-  </div>
-
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
-<script>
-/* ===================== إعداد قوائم تشغيل القرآن (السديس) ===================== */
-const SUDAIS_BASE = "https://download.quranicaudio.com/quran/abdurrahmaan_as-sudays/";
-function surahUrl(n){ return SUDAIS_BASE + String(n).padStart(3, "0") + ".mp3"; }
-
-const juz30Names = {
-  78:"النبأ",79:"النازعات",80:"عبس",81:"التكوير",82:"الانفطار",83:"المطففين",84:"الانشقاق",85:"البروج",
-  86:"الطارق",87:"الأعلى",88:"الغاشية",89:"الفجر",90:"البلد",91:"الشمس",92:"الليل",93:"الضحى",
-  94:"الشرح",95:"التين",96:"العلق",97:"القدر",98:"البينة",99:"الزلزلة",100:"العاديات",101:"القارعة",
-  102:"التكاثر",103:"العصر",104:"الهمزة",105:"الفيل",106:"قريش",107:"الماعون",108:"الكوثر",
-  109:"الكافرون",110:"النصر",111:"المسد",112:"الإخلاص",113:"الفلق",114:"الناس"
-};
-
-const playlists = {
-  "تشغيل طويل (سور طويلة)": [
-    { title: "الفاتحة", url: surahUrl(1) },
-    { title: "البقرة", url: surahUrl(2) },
-    { title: "آل عمران", url: surahUrl(3) },
-    { title: "النساء", url: surahUrl(4) },
-    { title: "المائدة", url: surahUrl(5) },
-    { title: "الأنعام", url: surahUrl(6) },
-    { title: "الأعراف", url: surahUrl(7) },
-    { title: "الأنفال", url: surahUrl(8) },
-    { title: "التوبة", url: surahUrl(9) },
-    { title: "يونس", url: surahUrl(10) }
-  ],
-  "الجزء 30 (عمّ) كامل": Array.from({length: 37}, (_,i)=>78+i).map(n=>({title: juz30Names[n] || ("سورة " + n), url: surahUrl(n)})),
-  "الختمة الكاملة (114 سورة)": Array.from({length:114},(_,i)=>i+1).map(n=>({title: "سورة " + n, url: surahUrl(n)}))
-};
-
-/* ===================== عناصر الواجهة ===================== */
-const playlistSelect = document.getElementById("playlistSelect");
-const player = document.getElementById("player");
-const nowPlaying = document.getElementById("nowPlaying");
-const trackCount = document.getElementById("trackCount");
-const playBtn = document.getElementById("playBtn");
-const pauseBtn = document.getElementById("pauseBtn");
-const nextBtn = document.getElementById("nextBtn");
-const stopBtn = document.getElementById("stopBtn");
-const playTime = document.getElementById("playTime");
-const netState = document.getElementById("netState");
-const toast = document.getElementById("toast");
-
-const autoplayOverlay = document.getElementById("autoplay");
-const autoplayStart = document.getElementById("autoplayStart");
-const autoplayClose = document.getElementById("autoplayClose");
-
-let currentListName = Object.keys(playlists)[0];
-let currentIndex = 0;
-
-function showToast(msg){
-  toast.textContent = msg;
-  toast.classList.add("show");
-  clearTimeout(showToast._t);
-  showToast._t = setTimeout(()=>toast.classList.remove("show"), 2600);
-}
-
-function showAutoplayOverlay(){ autoplayOverlay.classList.add("show"); }
-function hideAutoplayOverlay(){ autoplayOverlay.classList.remove("show"); }
-
-function setNetLabel(){
-  const online = navigator.onLine;
-  netState.textContent = online ? "🌐 متصل" : "🌐 غير متصل";
-}
-window.addEventListener("online", setNetLabel);
-window.addEventListener("offline", setNetLabel);
-setNetLabel();
-
-function fillPlaylists(){
-  playlistSelect.innerHTML = "";
-  Object.keys(playlists).forEach(name=>{
-    const opt = document.createElement("option");
-    opt.value = name;
-    opt.textContent = name;
-    playlistSelect.appendChild(opt);
-  });
-  playlistSelect.value = currentListName;
-  updateTrackCount();
-  loadCurrent(false);
-}
-
-function updateTrackCount(){
-  const list = playlists[currentListName];
-  trackCount.textContent = `عدد المقاطع: ${list.length}`;
-}
-
-function loadCurrent(save=true){
-  const list = playlists[currentListName];
-  const item = list[currentIndex];
-  player.src = item.url;
-  nowPlaying.textContent = `🎧 الآن: ${item.title} (${currentIndex+1}/${list.length})`;
-  if(save){
-    localStorage.setItem("plName", currentListName);
-    localStorage.setItem("plIndex", String(currentIndex));
-  }
-}
-
-async function safePlay(){
-  try{
-    await player.play();
-    return true;
-  }catch(e){
-    return false;
-  }
-}
-
-let userPaused = false;
-
-function next(){
-  const list = playlists[currentListName];
-  currentIndex = (currentIndex + 1) % list.length;
-  loadCurrent(true);
-  safePlay().then(ok=>{ if(!ok) showAutoplayOverlay(); });
-}
-
-playlistSelect.addEventListener("change", ()=>{
-  currentListName = playlistSelect.value;
-  currentIndex = 0;
-  userPaused = false;
-  updateTrackCount();
-  loadCurrent(true);
-  safePlay().then(ok=>{ if(!ok) showAutoplayOverlay(); });
-});
-
-playBtn.addEventListener("click", async ()=>{
-  userPaused = false;
-  loadCurrent(true);
-  const ok = await safePlay();
-  if(!ok) showAutoplayOverlay();
-});
-
-pauseBtn.addEventListener("click", ()=>{
-  userPaused = true;
-  player.pause();
-  showToast("تم الإيقاف المؤقت");
-});
-
-stopBtn.addEventListener("click", ()=>{
-  userPaused = true;
-  player.pause();
-  player.currentTime = 0;
-  showToast("تم الإيقاف");
-});
-
-nextBtn.addEventListener("click", ()=>{
-  userPaused = false;
-  next();
-});
-
-player.addEventListener("ended", ()=>{ if(!userPaused) next(); });
-
-/* إعادة المحاولة عند مشاكل الشبكة */
-player.addEventListener("stalled", ()=>showToast("⏳ جاري التحميل…"));
-player.addEventListener("waiting", ()=>showToast("⏳ جاري التحميل…"));
-
-player.addEventListener("error", async ()=>{
-  showToast("⚠️ تعذّر تشغيل المقطع — محاولة الإصلاح…");
-  // محاولة إعادة تحميل نفس المقطع مرة واحدة
-  const same = player.src;
-  try{
-    player.src = same;
-    const ok = await safePlay();
-    if(!ok){
-      setTimeout(()=>{ if(!userPaused) next(); }, 900);
-    }
-  }catch(e){
-    setTimeout(()=>{ if(!userPaused) next(); }, 900);
-  }
-});
-
-/* إذا توقف فجأة بدون تدخل المستخدم: نحاول الاستئناف */
-player.addEventListener("pause", ()=>{
-  if(userPaused) return;
-  setTimeout(async ()=>{
-    if(userPaused) return;
-    const ok = await safePlay();
-    if(!ok) showAutoplayOverlay();
-  }, 700);
-});
-
-/* عند الرجوع للصفحة: حاول الاستئناف */
-document.addEventListener("visibilitychange", async ()=>{
-  if(document.visibilityState === "visible" && !userPaused){
-    const ok = await safePlay();
-    if(!ok) showAutoplayOverlay();
-  }
-});
-window.addEventListener("pageshow", async ()=>{
-  if(!userPaused){
-    const ok = await safePlay();
-    if(!ok) showAutoplayOverlay();
-  }
-});
-
-/* الوقت */
-setInterval(()=>{
-  const t = Math.floor(player.currentTime || 0);
-  const mm = String(Math.floor(t/60)).padStart(2,"0");
-  const ss = String(t%60).padStart(2,"0");
-  playTime.textContent = `⏱ ${mm}:${ss}`;
-}, 500);
-
-/* Autoplay overlay controls */
-autoplayClose.addEventListener("click", hideAutoplayOverlay);
-autoplayStart.addEventListener("click", async ()=>{
-  hideAutoplayOverlay();
-  userPaused = false;
-  loadCurrent(true);
-  const ok = await safePlay();
-  if(!ok) showAutoplayOverlay();
-});
-
-/* محاولة تشغيل تلقائي فور التحميل */
-window.addEventListener("load", async ()=>{
-  const ok = await safePlay();
-  if(!ok) showAutoplayOverlay();
-});
-
-/* عند أول تفاعل نحاول التشغيل ونفعّل Wake Lock */
-let triedAuto = false;
-async function tryAutoplayOnce(){
-  if(triedAuto) return;
-  triedAuto = true;
-  if(!userPaused){
-    const ok = await safePlay();
-    if(!ok) showAutoplayOverlay();
-  }
-  enableWakeLock();
-}
-["click","touchstart","keydown"].forEach(evt=>{
-  window.addEventListener(evt, ()=>tryAutoplayOnce(), {once:true, passive:true});
-});
-
-/* Wake Lock (منع انطفاء الشاشة) */
-let wakeLock = null;
-async function enableWakeLock(){
-  try{
-    if("wakeLock" in navigator){
-      wakeLock = await navigator.wakeLock.request("screen");
-      showToast("✅ تم منع انطفاء الشاشة أثناء التشغيل");
-      wakeLock.addEventListener("release", ()=>{});
-    }
-  }catch(e){
-    // غير مدعوم أو مرفوض
-  }
-}
-
-/* مشاركة ونسخ رابط */
-async function copyText(txt){
-  try{
-    await navigator.clipboard.writeText(txt);
-    showToast("تم النسخ ✅");
-  }catch(e){
-    const ta = document.createElement("textarea");
-    ta.value = txt;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand("copy");
-    ta.remove();
-    showToast("تم النسخ ✅");
-  }
-}
-document.getElementById("copyLinkBtn").addEventListener("click", ()=>copyText(location.href));
-
-document.getElementById("shareBtn").addEventListener("click", async ()=>{
-  const data = {
-    title: document.title,
-    text: "صدقة جارية عن المرحوم فهد القرشي — أذكار وتشغيل القرآن بصوت السديس 🤍",
-    url: location.href
-  };
-  if(navigator.share){
-    try{ await navigator.share(data); }catch(e){}
-  } else {
-    await copyText(location.href);
-    showToast("تم نسخ الرابط (المشاركة غير مدعومة هنا)");
-  }
-});
-
-/* ملء الشاشة */
-document.getElementById("fullBtn").addEventListener("click", async ()=>{
-  try{
-    if(!document.fullscreenElement){
-      await document.documentElement.requestFullscreen();
-      showToast("تم تفعيل ملء الشاشة");
-    }else{
-      await document.exitFullscreen();
-      showToast("تم الخروج من ملء الشاشة");
-    }
-  }catch(e){
-    showToast("ملء الشاشة غير متاح على هذا الجهاز");
-  }
-});
-
-/* ===================== الأذكار ===================== */
-const adhkar = {
-  morning: [
-    { t: "أصبحنا وأصبح الملك لله، والحمد لله… (مرة)", tag:"صباح" },
-    { t: "اللهم بك أصبحنا وبك أمسينا وبك نحيا وبك نموت وإليك النشور. (مرة)", tag:"صباح" },
-    { t: "أعوذ بكلمات الله التامات من شر ما خلق. (3 مرات)", tag:"حفظ" },
-    { t: "اللهم إني أسألك العفو والعافية في الدنيا والآخرة. (مرة)", tag:"دعاء" },
-    { t: "سُبْحَانَ اللهِ وبحمدِهِ. (100 مرة) أو ما تيسر", tag:"تسبيح" }
-  ],
-  evening: [
-    { t: "أمسينا وأمسى الملك لله، والحمد لله… (مرة)", tag:"مساء" },
-    { t: "اللهم بك أمسينا وبك أصبحنا وبك نحيا وبك نموت وإليك المصير. (مرة)", tag:"مساء" },
-    { t: "أعوذ بكلمات الله التامات من شر ما خلق. (3 مرات)", tag:"حفظ" },
-    { t: "اللهم إني أسألك العفو والعافية في الدنيا والآخرة. (مرة)", tag:"دعاء" },
-    { t: "سُبْحَانَ اللهِ وبحمدِهِ. (100 مرة) أو ما تيسر", tag:"تسبيح" }
-  ],
-  sleep: [
-    { t: "باسمك ربي وضعت جنبي وبك أرفعه… (مرة)", tag:"نوم" },
-    { t: "اللهم قِني عذابك يوم تبعث عبادك. (3 مرات)", tag:"نوم" },
-    { t: "قراءة آية الكرسي قبل النوم.", tag:"حفظ" },
-    { t: "سبحان الله (33) الحمد لله (33) الله أكبر (34).", tag:"تسبيح" }
-  ]
-};
-
-const area = document.getElementById("adhkarArea");
-function renderAdhkar(kind){
-  const list = adhkar[kind];
-  area.innerHTML = "";
-  list.forEach(item=>{
-    const box = document.createElement("div");
-    box.className = "dhikr";
-    box.innerHTML = `<div class="t">${item.t}</div><div class="pill">${item.tag}</div>`;
-    area.appendChild(box);
-  });
-  localStorage.setItem("adhkarKind", kind);
-}
-document.getElementById("showMorning").addEventListener("click", ()=>renderAdhkar("morning"));
-document.getElementById("showEvening").addEventListener("click", ()=>renderAdhkar("evening"));
-document.getElementById("showSleep").addEventListener("click", ()=>renderAdhkar("sleep"));
-document.getElementById("randomDhikr").addEventListener("click", ()=>{
-  const kinds = Object.keys(adhkar);
-  const kind = kinds[Math.floor(Math.random()*kinds.length)];
-  const list = adhkar[kind];
-  const item = list[Math.floor(Math.random()*list.length)];
-  showToast("✨ " + item.t);
-});
-
-/* ===================== عدّاد التسبيح ===================== */
-let count = Number(localStorage.getItem("tasbihCount") || "0");
-const countEl = document.getElementById("count");
-countEl.textContent = count;
-let history = [];
-function setCount(n){
-  count = Math.max(0, n);
-  countEl.textContent = count;
-  localStorage.setItem("tasbihCount", String(count));
-}
-function inc(){
-  history.push(count);
-  if(history.length>60) history.shift();
-  setCount(count + 1);
-}
-document.getElementById("tasbihBtn").addEventListener("click", inc);
-document.getElementById("tahmidBtn").addEventListener("click", inc);
-document.getElementById("takbirBtn").addEventListener("click", inc);
-document.getElementById("tahlilBtn").addEventListener("click", inc);
-document.getElementById("resetBtn").addEventListener("click", ()=>{
-  history.push(count);
-  setCount(0);
-  showToast("تم تصفير العداد");
-});
-document.getElementById("undoBtn").addEventListener("click", ()=>{
-  if(history.length){
-    setCount(history.pop());
-    showToast("تم التراجع");
-  }else{
-    showToast("لا يوجد شيء للتراجع");
-  }
-});
-
-/* ===================== استعادة الحالة السابقة ===================== */
-(function restore(){
-  const savedName = localStorage.getItem("plName");
-  const savedIndex = Number(localStorage.getItem("plIndex") || "0");
-  const savedAdhkar = localStorage.getItem("adhkarKind") || "morning";
-  if(savedName && playlists[savedName]) currentListName = savedName;
-  currentIndex = (Number.isFinite(savedIndex) ? Math.max(0, savedIndex) : 0);
-  fillPlaylists();
-  renderAdhkar(savedAdhkar);
-  loadCurrent(false);
-})();
-
-/* ===================== PWA (اختياري) ===================== */
-if("serviceWorker" in navigator){
-  navigator.serviceWorker.register("./sw.js").catch(()=>{});
-}
-</script>
-</body>
-</html>
